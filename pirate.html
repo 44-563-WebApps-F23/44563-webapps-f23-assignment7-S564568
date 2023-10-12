@@ -71,6 +71,10 @@
 <p id="penalty">Penalty is zero.</p>
 <p onclick="help()">Click for help.</p>
 <div id="help" >Help report</div>
+<br>
+<div class=" container text-center">
+    <button onclick="reset()">new game</button>
+</div>
 <div class="GameField">
     <div class="row">
         <div class="search_location col-sm-2"><img src="treasure map.jpg" id="0" onclick="check(0)" alt="map" style="width: 120px;height: 70px;"></div>
@@ -185,6 +189,15 @@
       help_text = document.getElementById("help")
       help_text.innerHTML=`Help report ${report}`
     }
+    function reset() {
+            checkCount = 0;
+            penalty = 0
+            treasureLocation = Math.round(Math.random() * (24));
+            trapLocation = Math.round(Math.random() * (24));
+            document.getElementById("locations").innerHTML = `Number of locations checked is ${checkCount}`
+            document.getElementById("penalty").innerHTML = `Penalty is ${penalty}`
+
+        }
     </script>
 </body>
 </html>
